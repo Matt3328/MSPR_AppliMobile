@@ -59,7 +59,7 @@ class _ARObjectState extends State<ARObject> {
       ARSessionManager arSessionManager,
       ARObjectManager arObjectManager,
       ARAnchorManager arAnchorManager,
-      ARLocationManager arLocationManager){
+      ARLocationManager arLocationManager) async{
     this.arSessionManager = arSessionManager;
     this.arObjectManager = arObjectManager;
 
@@ -75,19 +75,21 @@ class _ARObjectState extends State<ARObject> {
 
 
     //Download model to file system
-    httpClient = new HttpClient();
-    _downloadFile(
-        "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb",
-        "LocalDuck.glb");
-    //copyGLBToLocalFolder('high_detailed_mouse.glb');
+    //httpClient = new HttpClient();
+    //_downloadFile(
+    //    "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb",
+    //    "LocalDuck.glb");
+    //String content = await rootBundle.loadString('assets/cofee_machine.glb');
+    //copyGLBToLocalFolder('assets/cofee_machine.glb');
+    //Future.delayed(Duration(seconds: 2));
     // Alternative to use type fileSystemAppFolderGLTF2:
     //_downloadAndUnpack(
     //    "https://drive.google.com/uc?export=download&id=1fng7yiK0DIR0uem7XkV2nlPSGH9PysUs",
     //    "Chicken_01.zip");
     //File file = await copyGLBToLocalFolder('high_detailed_mouse.glb');
     var newNode = ARNode(
-        type: NodeType.fileSystemAppFolderGLB,
-        uri: "LocalDuck.glb",
+        type: NodeType.localGLTF2,
+        uri: "assets/models/scene.gltf",
         scale: Vector3(0.2, 0.2, 0.2),
         position: Vector3(0.5, 0.0, -2.0),
         rotation: Vector4(1.0, 0.0, 0.0, 0.0));
@@ -97,6 +99,7 @@ class _ARObjectState extends State<ARObject> {
 
 // Store the node for future reference
     this.localObjectNode = newNode;
+
   }
 
   Future<File> _downloadFile(String url, String filename) async {
@@ -149,13 +152,17 @@ class _ARObjectState extends State<ARObject> {
       this.localObjectNode = null;
     } else {
       var newNode = ARNode(
-          type: NodeType.localGLTF2,
-          uri: "Models/Chicken_01/Chicken_01.gltf",
+          type: NodeType.fileSystemAppFolderGLB,
+          uri: "cofee_machine.glb",
           scale: Vector3(0.2, 0.2, 0.2),
-          position: Vector3(0.0, 0.0, 0.0),
+          position: Vector3(0.5, 0.0, -2.0),
           rotation: Vector4(1.0, 0.0, 0.0, 0.0));
-      bool? didAddLocalNode = await this.arObjectManager!.addNode(newNode);
-      this.localObjectNode = (didAddLocalNode!) ? newNode : null;
+
+// Add the node to the ARObjectManager
+      this.arObjectManager!.addNode(newNode);
+
+// Store the node for future reference
+      this.localObjectNode = newNode;
     }
   }
 
@@ -181,17 +188,16 @@ class _ARObjectState extends State<ARObject> {
     } else {
       var newNode = ARNode(
           type: NodeType.fileSystemAppFolderGLB,
-          uri: "LocalDuck.glb",
-          position: Vector3(0.5, 0.0, 0.0),
-          scale: Vector3(0.2, 0.2, 0.2));
+          uri: "cofee_machine.glb",
+          scale: Vector3(0.2, 0.2, 0.2),
+          position: Vector3(0.5, 0.0, -2.0),
+          rotation: Vector4(1.0, 0.0, 0.0, 0.0));
 
-      //Alternative to use type fileSystemAppFolderGLTF2:
-      //var newNode = ARNode(
-      //    type: NodeType.fileSystemAppFolderGLTF2,
-      //    uri: "Chicken_01.gltf",
-      //    scale: Vector3(0.2, 0.2, 0.2));
-      bool? didAddFileSystemNode = await this.arObjectManager!.addNode(newNode);
-      this.fileSystemNode = (didAddFileSystemNode!) ? newNode : null;
+// Add the node to the ARObjectManager
+      this.arObjectManager!.addNode(newNode);
+
+// Store the node for future reference
+      this.localObjectNode = newNode;
     }
   }
 

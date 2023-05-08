@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cofee Machine
+* source:	https://sketchfab.com/3d-models/cofee-machine-c8d20280c5da411e884b0e0250c0b8f8
+* author:	darja.burla4enko (https://sketchfab.com/darja.burla4enko)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cofee Machine" (https://sketchfab.com/3d-models/cofee-machine-c8d20280c5da411e884b0e0250c0b8f8) by darja.burla4enko (https://sketchfab.com/darja.burla4enko) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

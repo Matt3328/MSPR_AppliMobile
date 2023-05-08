@@ -1,0 +1,403 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 940,
+      "max": [
+        138.72027587890625,
+        494.68817138671875,
+        256.36041259765625
+      ],
+      "min": [
+        -122.13560485839844,
+        42.47514343261719,
+        -303.6578063964844
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11280,
+      "componentType": 5126,
+      "count": 940,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9999933838844299
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 940,
+      "max": [
+        1.000000238418579,
+        1.0
+      ],
+      "min": [
+        0.0,
+        -9.313225746154785e-10
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2148,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 22560,
+      "componentType": 5126,
+      "count": 156,
+      "max": [
+        138.72027587890625,
+        487.8724365234375,
+        249.6995849609375
+      ],
+      "min": [
+        -115.531494140625,
+        42.47514343261719,
+        73.5754165649414
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 24432,
+      "componentType": 5126,
+      "count": 156,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9570876955986023
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7520,
+      "componentType": 5126,
+      "count": 156,
+      "max": [
+        0.65625,
+        0.9976261854171753
+      ],
+      "min": [
+        0.34375,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 8592,
+      "componentType": 5125,
+      "count": 459,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 26304,
+      "componentType": 5126,
+      "count": 693,
+      "max": [
+        131.7559356689453,
+        576.025390625,
+        262.79595947265625
+      ],
+      "min": [
+        -130.51246643066406,
+        0.15958595275878906,
+        -278.3801574707031
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 34620,
+      "componentType": 5126,
+      "count": 693,
+      "max": [
+        1.0,
+        1.0,
+        0.9999934434890747
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9999934434890747
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 8768,
+      "componentType": 5126,
+      "count": 693,
+      "max": [
+        1.000000238418579,
+        1.0
+      ],
+      "min": [
+        0.0,
+        -9.313225746154785e-10
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 10428,
+      "componentType": 5125,
+      "count": 2475,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "darja.burla4enko (https://sketchfab.com/darja.burla4enko)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/cofee-machine-c8d20280c5da411e884b0e0250c0b8f8",
+      "title": "Cofee Machine"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 20328,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14312,
+      "byteOffset": 20328,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 42936,
+      "byteOffset": 34640,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 77576,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Silver",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.34782,
+          0.430518,
+          0.527,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8810792884997279
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "black",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.025,
+          0.025,
+          0.025,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "material",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.784,
+          0.039984,
+          0.039984,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8942628736559436
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "cofee_machine_Silver_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "cofee_machine_black_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "cofee_machine_Red_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "0fd8255159f3465a95646d0714441661.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "cofee_machine"
+    },
+    {
+      "mesh": 0,
+      "name": "cofee_machine_Silver_0"
+    },
+    {
+      "mesh": 1,
+      "name": "cofee_machine_black_0"
+    },
+    {
+      "mesh": 2,
+      "name": "cofee_machine_Red_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
