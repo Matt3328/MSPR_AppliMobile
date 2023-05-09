@@ -42,6 +42,7 @@ dependencies:
   http: ^0.13.6
   qr_code_scanner: ^1.0.1
   flutter_secure_storage: ^8.0.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
 
   assets:
     - assets/models/
+    - .env
 
   # To add assets to your application, add an assets section, like this:
   # assets:

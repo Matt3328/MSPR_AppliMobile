@@ -2,9 +2,21 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:model3d/main.dart';
 import 'package:path_provider/path_provider.dart';
 import 'Products.dart';
 import 'ProductDetails.dart';
+
+
+void resetAuth(BuildContext context) {
+  final storage = FlutterSecureStorage();
+  storage.delete(key: "BasicAuth");
+  Navigator.push(
+      context,
+    MaterialPageRoute(builder: (context) => MyApp()),
+  );
+}
 
 class ListProducts extends StatelessWidget {
   @override
@@ -13,7 +25,13 @@ class ListProducts extends StatelessWidget {
       title: 'My App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Products'),
+          title: Text('Produits'),
+          leading: IconButton(
+            icon: Icon(Icons.pages),
+            onPressed: () {
+              resetAuth(context);
+            },
+          ),
         ),
         body: Center(
           child: FutureBuilder<List<Product>>(

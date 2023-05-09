@@ -1,5 +1,9 @@
 import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+
 
 class Product {
   final String id;
@@ -22,7 +26,11 @@ class Product {
 }
 
 Future<List<Product>> fetchProducts() async {
-  final response = await http.get(Uri.parse('http://192.168.1.18:8080/products'), headers: {"Accept-Charset": "utf-8"});
+  final storage = FlutterSecureStorage();
+  final token = await storage.read(key: 'BasicAuth');
+  await dotenv.load();
+  String apiBaseUrl = dotenv.env['API_BASE_URL']!;
+  final response = await http.get(Uri.parse(apiBaseUrl + 'api/v1/products'), headers: {'Authorization': 'Basic $token'});
   if (response.statusCode == 200) {
     List<dynamic> jsonList = json.decode(utf8.decode(response.bodyBytes));
     List<Product> products = [];
@@ -32,17 +40,21 @@ Future<List<Product>> fetchProducts() async {
     });
     return products;
   } else {
-    throw Exception('Failed to fetch products');
+    throw Exception('Erreur dans la récupération des produits');
   }
 }
 
 Future<Map<String, dynamic>> fetchProductDetails(String productId) async {
-  final response = await http.get(Uri.parse('http://192.168.1.18:8080/products/$productId'));
+  final storage = FlutterSecureStorage();
+  final token = await storage.read(key: 'BasicAuth');
+  await dotenv.load();
+  String apiBaseUrl = dotenv.env['API_BASE_URL']!;
+  final response = await http.get(Uri.parse(apiBaseUrl + 'api/v1/products/$productId'), headers: {'Authorization': 'Basic $token'});
 
   if (response.statusCode == 200) {
     Map<String, dynamic> jsonResponse = jsonDecode(utf8.decode(response.bodyBytes));
     return jsonResponse['details'];
   } else {
-    throw Exception('Failed to load product details');
+    throw Exception('Erreur dans la récupération du produit');
   }
 }

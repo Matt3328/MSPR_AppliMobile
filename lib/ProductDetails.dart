@@ -48,7 +48,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         MaterialPageRoute(builder: (context) => ARObject()),
                       );
                     },
-                    child: Text('Voir l''objet en réalité augmenté'),
+                    child: Text("Voir l'objet en réalité augmenté"),
                   ),
                 ],
               );

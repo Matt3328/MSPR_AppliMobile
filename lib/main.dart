@@ -2,12 +2,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:model3d/ListProducts.dart';
+import 'package:model3d/dotenv.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-const String _storageKey = 'auth_key';
+const String _storageKey = 'BasicAuth';
 
-void main() => runApp(MyApp());
+void main() {
+  loadDotEnv();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -68,40 +72,11 @@ class _QRScannerState extends State<QRScanner> {
       if (isLoggedIn) {
         return; // already logged in
       }
-      if (scanData.code == 'this is a qr code SBBRRRRRR') {
-        await _storeAuthToken('my-auth-token');
+        await _storeAuthToken(scanData.code ?? "");
         setState(() {
           isLoggedIn = true;
         });
         _navigateToListProducts();
-        showDialog(
-          context: context,
-          builder: (_) => AlertDialog(
-            title: Text('Login successful'),
-            content: Text('You are now logged in.'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text('OK'),
-              ),
-            ],
-          ),
-        );
-      } else {
-        showDialog(
-          context: context,
-          builder: (_) => AlertDialog(
-            title: Text('Invalid QR code'),
-            content: Text('Please scan the correct QR code.'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text('OK'),
-              ),
-            ],
-          ),
-        );
-      }
     });
   }
 
@@ -121,7 +96,7 @@ class _QRScannerState extends State<QRScanner> {
       body: SafeArea(
         child: isLoggedIn
             ? Center(
-          child: Text('You are logged in.'),
+          child: Text('Vous êtes connectés'),
         )
             : QRView(
           key: qrKey,
